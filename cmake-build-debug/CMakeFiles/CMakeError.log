@@ -1,0 +1,58 @@
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: C:/Users/gregw/CLionProjects/RocketDetection/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-db3xtd
+
+Run Build Command(s):C:/Users/gregw/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8109.222/bin/ninja/win/x64/ninja.exe cmTC_fa19d && [1/2] Building CXX object CMakeFiles\cmTC_fa19d.dir\src.cxx.obj
+FAILED: CMakeFiles/cmTC_fa19d.dir/src.cxx.obj 
+C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1435~1.322\bin\Hostx64\x64\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /EHsc  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\cmTC_fa19d.dir\src.cxx.obj /FdCMakeFiles\cmTC_fa19d.dir\ /FS -c C:\Users\gregw\CLionProjects\RocketDetection\cmake-build-debug\CMakeFiles\CMakeScratch\TryCompile-db3xtd\src.cxx
+C:\Users\gregw\CLionProjects\RocketDetection\cmake-build-debug\CMakeFiles\CMakeScratch\TryCompile-db3xtd\src.cxx(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: C:/Users/gregw/CLionProjects/RocketDetection/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-npsc3s
+
+Run Build Command(s):C:/Users/gregw/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8109.222/bin/ninja/win/x64/ninja.exe cmTC_0d78b && [1/2] Building CXX object CMakeFiles\cmTC_0d78b.dir\CheckFunctionExists.cxx.obj
+[2/2] Linking CXX executable cmTC_0d78b.exe
+FAILED: cmTC_0d78b.exe 
+cmd.exe /C "cd . && C:\Users\gregw\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.8109.222\bin\cmake\win\x64\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_0d78b.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100220~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100220~1.0\x64\mt.exe --manifests  -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1435~1.322\bin\Hostx64\x64\link.exe /nologo CMakeFiles\cmTC_0d78b.dir\CheckFunctionExists.cxx.obj  /out:cmTC_0d78b.exe /implib:cmTC_0d78b.lib /pdb:cmTC_0d78b.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cmd.exe /C "cd /D C:\Users\gregw\CLionProjects\RocketDetection\cmake-build-debug\CMakeFiles\CMakeScratch\TryCompile-npsc3s && "C:\Program Files\PowerShell\7\pwsh.exe" -noprofile -executionpolicy Bypass -file C:/Users/gregw/.clion-vcpkg/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/gregw/CLionProjects/RocketDetection/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-npsc3s/cmTC_0d78b.exe -installedDir C:/Users/gregw/.clion-vcpkg/vcpkg/installed/x64-windows/debug/bin -OutVariable out""
+LINK Pass 1: command "C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1435~1.322\bin\Hostx64\x64\link.exe /nologo CMakeFiles\cmTC_0d78b.dir\CheckFunctionExists.cxx.obj /out:cmTC_0d78b.exe /implib:cmTC_0d78b.lib /pdb:cmTC_0d78b.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_0d78b.dir/intermediate.manifest CMakeFiles\cmTC_0d78b.dir/manifest.res" failed (exit code 1104) with the following output:
+LINK : fatal error LNK1104: cannot open file 'pthreads.lib'
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: C:/Users/gregw/CLionProjects/RocketDetection/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ch44ly
+
+Run Build Command(s):C:/Users/gregw/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8109.222/bin/ninja/win/x64/ninja.exe cmTC_0146e && [1/2] Building CXX object CMakeFiles\cmTC_0146e.dir\CheckFunctionExists.cxx.obj
+[2/2] Linking CXX executable cmTC_0146e.exe
+FAILED: cmTC_0146e.exe 
+cmd.exe /C "cd . && C:\Users\gregw\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.8109.222\bin\cmake\win\x64\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_0146e.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100220~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100220~1.0\x64\mt.exe --manifests  -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1435~1.322\bin\Hostx64\x64\link.exe /nologo CMakeFiles\cmTC_0146e.dir\CheckFunctionExists.cxx.obj  /out:cmTC_0146e.exe /implib:cmTC_0146e.lib /pdb:cmTC_0146e.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cmd.exe /C "cd /D C:\Users\gregw\CLionProjects\RocketDetection\cmake-build-debug\CMakeFiles\CMakeScratch\TryCompile-ch44ly && "C:\Program Files\PowerShell\7\pwsh.exe" -noprofile -executionpolicy Bypass -file C:/Users/gregw/.clion-vcpkg/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/gregw/CLionProjects/RocketDetection/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ch44ly/cmTC_0146e.exe -installedDir C:/Users/gregw/.clion-vcpkg/vcpkg/installed/x64-windows/debug/bin -OutVariable out""
+LINK Pass 1: command "C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1435~1.322\bin\Hostx64\x64\link.exe /nologo CMakeFiles\cmTC_0146e.dir\CheckFunctionExists.cxx.obj /out:cmTC_0146e.exe /implib:cmTC_0146e.lib /pdb:cmTC_0146e.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_0146e.dir/intermediate.manifest CMakeFiles\cmTC_0146e.dir/manifest.res" failed (exit code 1104) with the following output:
+LINK : fatal error LNK1104: cannot open file 'pthread.lib'
+ninja: build stopped: subcommand failed.
+
+
+
