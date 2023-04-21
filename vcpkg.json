@@ -1,5 +1,5 @@
 {
   "name" : "rocket-detection",
   "version-string" : "0.0.1",
-  "dependencies" : [ "opencv" ]
+  "dependencies" : [ "opencv", "ffmpeg", "gtk", "gtkmm", "pkgconf" ]
 }

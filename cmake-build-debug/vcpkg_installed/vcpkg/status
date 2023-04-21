@@ -357,3 +357,524 @@ Abi: b53efb8d3ee8feccf1cd5324de0543cf6687ead52c6702fd39b87cf3d052a062
 Description: libpng is a library implementing an interface for reading and writing PNG (Portable Network Graphics) format files
 Status: purge ok not-installed
 
+Package: vcpkg-tool-meson
+Version: 0.63
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 25d8002509861b05ea91250713ed45464318f55189c5ae34a2130ac50afda7a0
+Description: Meson build system
+Status: install ok installed
+
+Package: pkgconf
+Version: 1.8.0
+Port-Version: 5
+Depends: vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: cc0face9c670df54548bcf93e79ae2793ab943020dd80fd6d986a2eeedaae460
+Description: pkgconf is a program which helps to configure compiler and linker flags for development libraries. It is similar to pkg-config from freedesktop.org.
+Status: install ok installed
+
+Package: vcpkg-pkgconfig-get-modules
+Version: 2022-02-10
+Port-Version: 1
+Depends: pkgconf
+Architecture: x64-windows
+Multi-Arch: same
+Abi: aeef6e2210c0d19cd7b6fe1ccab843b81ab88aac3e9b9b630200a23c2c159513
+Status: install ok installed
+
+Package: vcpkg-cmake-get-vars
+Version: 2023-03-02
+Depends: vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: c15d6a9ea25ef36c1d47df99f00ba40638d477a5e832669b57c1a0b5dc5de8c1
+Status: install ok installed
+
+Package: ffmpeg
+Version: 5.1.2
+Port-Version: 5
+Depends: vcpkg-cmake-get-vars, vcpkg-pkgconfig-get-modules
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 552f7515453b23b55fc642f32bad5bcebbca9eac2b9be4453624e7b12c4cc595
+Description: a library to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created.
+    FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. No matter if they were designed by some standards committee, the community or a corporation. It is also highly portable: FFmpeg compiles, runs, and passes our testing infrastructure FATE across Linux, Mac OS X, Microsoft Windows, the BSDs, Solaris, etc. under a wide variety of build environments, machine architectures, and configurations.
+Default-Features: avcodec, avdevice, avfilter, avformat, swresample, swscale
+Status: install ok installed
+
+Package: ffmpeg
+Feature: avcodec
+Architecture: x64-windows
+Multi-Arch: same
+Description: Build the avcodec library
+Status: install ok installed
+
+Package: ffmpeg
+Feature: avdevice
+Depends: ffmpeg
+Architecture: x64-windows
+Multi-Arch: same
+Description: Build the avdevice library
+Status: install ok installed
+
+Package: ffmpeg
+Feature: avfilter
+Architecture: x64-windows
+Multi-Arch: same
+Description: Build the avfilter library
+Status: install ok installed
+
+Package: ffmpeg
+Feature: avformat
+Depends: ffmpeg
+Architecture: x64-windows
+Multi-Arch: same
+Description: Build the avformat library
+Status: install ok installed
+
+Package: ffmpeg
+Feature: swresample
+Architecture: x64-windows
+Multi-Arch: same
+Description: Build the swresample library
+Status: install ok installed
+
+Package: ffmpeg
+Feature: swscale
+Architecture: x64-windows
+Multi-Arch: same
+Description: Build the swscale library
+Status: install ok installed
+
+Package: libsass
+Version: 3.6.5
+Port-Version: 1
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d881f9ec8e01e01380579ab856f3266496b901b30742c811dd8be610d308ea5a
+Description: LibSass - Sass compiler written in C++
+Status: install ok installed
+
+Package: getopt-win32
+Version: 0.1
+Port-Version: 7
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 398573ef5eed0c8b299c3103567ddfa8bd28c4498690301abe093db97855f806
+Description: An implementation of getopt.
+Status: install ok installed
+
+Package: getopt
+Version: 0
+Port-Version: 2
+Depends: getopt-win32
+Architecture: x64-windows
+Multi-Arch: same
+Abi: bede6c7ea06dc19ada602432351e93cf9ef95eecb65bc74fd3120c99ad64e2cd
+Description: The getopt and getopt_long functions automate some of the chore involved in parsing typical unix command line options.
+Status: install ok installed
+
+Package: sassc
+Version: 3.6.2
+Depends: getopt, libsass
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 94a223624847511dd016ad5d3d07dde5c63edcce52b3bcf93094faa99e6d58a3
+Description: SassC is a wrapper around libsass (http://github.com/sass/libsass) used to generate a useful command-line application that can be installed and packaged for several operating systems.
+Status: install ok installed
+
+Package: bzip2
+Version: 1.0.8
+Port-Version: 3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 194cc9402f6006f027aa2ccbc7285569d75c3c5dd127367168482eb8fd634eac
+Description: bzip2 is a freely available, patent free, high-quality data compressor. It typically compresses files to within 10% to 15% of the best available techniques (the PPM family of statistical compressors), whilst being around twice as fast at compression and six times faster at decompression.
+Default-Features: tool
+Status: install ok installed
+
+Package: bzip2
+Feature: tool
+Architecture: x64-windows
+Multi-Arch: same
+Description: Builds bzip2 executable
+Status: install ok installed
+
+Package: brotli
+Version: 1.0.9
+Port-Version: 5
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e7d73d437a48cb982bfdec10f7392f329854f452056a0f9684a8677829f70d46
+Description: a generic-purpose lossless compression algorithm that compresses data using a combination of a modern variant of the LZ77 algorithm, Huffman coding and 2nd order context modeling.
+Status: install ok installed
+
+Package: freetype
+Version: 2.12.1
+Port-Version: 3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d13d2797f585396afc3607e4202f2648613bb715d6d8c368d5a1025d9671cfcc
+Description: A library to render fonts.
+Default-Features: brotli, bzip2, png, zlib
+Status: install ok installed
+
+Package: freetype
+Feature: brotli
+Depends: brotli
+Architecture: x64-windows
+Multi-Arch: same
+Description: Support decompression of WOFF2 streams
+Status: install ok installed
+
+Package: freetype
+Feature: bzip2
+Depends: bzip2
+Architecture: x64-windows
+Multi-Arch: same
+Description: Support bzip2 compressed fonts.
+Status: install ok installed
+
+Package: freetype
+Feature: png
+Depends: libpng
+Architecture: x64-windows
+Multi-Arch: same
+Description: Support PNG compressed OpenType embedded bitmaps.
+Status: install ok installed
+
+Package: freetype
+Feature: zlib
+Depends: zlib
+Architecture: x64-windows
+Multi-Arch: same
+Description: Use zlib instead of internal library for DEFLATE
+Status: install ok installed
+
+Package: harfbuzz
+Version: 7.0.0
+Depends: freetype, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: ee46641d848475b362a13530b10e26bb4372cef90ae24dc9dfa6d9aa5e9b06b2
+Description: HarfBuzz OpenType text shaping engine
+Status: install ok installed
+
+Package: pcre2
+Version: 10.40
+Port-Version: 1
+Depends: bzip2, vcpkg-cmake, vcpkg-cmake-config, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 2b3040a2edaabf56b24853cf8fb24a1c72452cf67d1b5bda41a2aad8c4c3f2d9
+Description: Regular Expression pattern matching using the same syntax and semantics as Perl 5.
+Status: install ok installed
+
+Package: libiconv
+Version: 1.17
+Port-Version: 1
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 6b2b362d83ec3e0d76751ab9ea971d6c13b4a021c44f7fa1f38a4418b59faa55
+Description: GNU Unicode text conversion
+Status: install ok installed
+
+Package: libffi
+Version: 3.4.4
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 8c022f0d983f701974e6607c865aef24fbaa9ba1b2b13664bb61a36b93702fd6
+Description: Portable, high level programming interface to various calling conventions
+Status: install ok installed
+
+Package: gettext
+Version: 0.21.1
+Depends: libiconv
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 75cf591b7eb4a4c69cfc41322134180be2cd3907566e47936a159e67e900111d
+Description: GNU gettext provides libintl and a set of tools to help produce multi-lingual messages.
+Status: install ok installed
+
+Package: gettext
+Feature: tools
+Architecture: x64-windows
+Multi-Arch: same
+Description: Build gettext tools
+Status: install ok installed
+
+Package: dirent
+Version: 1.23.2
+Port-Version: 1
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 2af9cb80f363d9edcfd486621b8e559bf2128e357cffbccafbdc353d1a5c4368
+Description: Dirent is a C/C++ programming interface that allows programmers to retrieve information about files and directories under Linux/UNIX. This project provides Linux compatible Dirent interface for Microsoft Windows.
+Status: install ok installed
+
+Package: glib
+Version: 2.76.0
+Port-Version: 1
+Depends: dirent, gettext, libffi, libiconv, pcre2, vcpkg-tool-meson, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 04027f6ae10a007215d1d200f362836d24dd6b1e3c46e364b3cf5c80488b1559
+Description: Portable, general-purpose utility library.
+Status: install ok installed
+
+Package: fribidi
+Version: 1.0.12
+Depends: fribidi, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 926705ec5b8e8a575b70e6698332b81d80ffd0047a8e851c8c8266e1b02189e8
+Description: GNU FriBidi is an implementation of the Unicode Bidirectional Algorithm (bidi)
+Status: install ok installed
+
+Package: pthreads
+Version: 3.0.0
+Port-Version: 13
+Depends: vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 6e1bf5226fea4a3be744e9b30515f38f4d8255bc4b1d30765284e3a8429324af
+Description: Meta-package that provides PThreads4W on Windows, or assumes presence of system pthreads on POSIX systems.
+Status: install ok installed
+
+Package: pthread
+Version: 3.0.0
+Port-Version: 1
+Depends: pthreads
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 55ff80e081d60fbef1d50df147965b04509df9356fc3ded0ef07436c3b5399c8
+Description: empty package, linking to other port
+Status: install ok installed
+
+Package: gperf
+Version: 3.1
+Port-Version: 4
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 27550c2bb6284763a205712d7c76553a2b310b15ac26c955960f3b1463ab2dc8
+Description: GNU perfect hash function generator
+Status: install ok installed
+
+Package: expat
+Version: 2.5.0
+Port-Version: 3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: f8ad81d92d197b9c911a62f4c140f6e7a39a5eb17f66e58c3374272fc9978137
+Description: XML parser library written in C
+Status: install ok installed
+
+Package: fontconfig
+Version: 2.14.1
+Port-Version: 1
+Depends: dirent, expat, freetype, getopt, gettext, gperf, libiconv, pthread, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 6ddb64fab690e171c1124498d685d7280548a9feb2eb33b84b5ac919b638cd68
+Description: Library for configuring and customizing font access.
+Status: install ok installed
+
+Package: pixman
+Version: 0.42.2
+Port-Version: 2
+Depends: libpng, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e248b894946909eec652afa9676c44cbd31c9429592d03325f7da1643c7c8ac9
+Description: Pixman is a low-level software library for pixel manipulation, providing features such as image compositing and trapezoid rasterization.
+Status: install ok installed
+
+Package: lzo
+Version: 2.10
+Port-Version: 8
+Depends: vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 9eb8f49e5004d89e03fe6cd0a8b18b7a158ada469eb7aa41aa1dc7763fb3b5dd
+Description: Lossless data compression library
+Status: install ok installed
+
+Package: cairo
+Version: 1.17.8
+Depends: dirent, expat, libpng, lzo, pixman, pthread, vcpkg-tool-meson, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e36b2f1eb595e00fb6959b9294df9a8cbe7d788188a1ee9c4daa200891c2da35
+Description: Cairo is a 2D graphics library with support for multiple output devices. Currently supported output targets include the X Window System (via both Xlib and XCB), Quartz, Win32, image buffers, PostScript, PDF, and SVG file output. Experimental backends include OpenGL, BeOS, OS/2, and DirectFB.
+Default-Features: fontconfig, freetype
+Status: install ok installed
+
+Package: cairo
+Feature: fontconfig
+Depends: fontconfig
+Architecture: x64-windows
+Multi-Arch: same
+Description: build with fontconfig
+Status: install ok installed
+
+Package: cairo
+Feature: freetype
+Depends: freetype
+Architecture: x64-windows
+Multi-Arch: same
+Description: use the freetype font backend
+Status: install ok installed
+
+Package: cairo
+Feature: gobject
+Depends: glib
+Architecture: x64-windows
+Multi-Arch: same
+Description: build gobject module
+Status: install ok installed
+
+Package: pango
+Version: 1.50.12
+Port-Version: 2
+Depends: cairo, fontconfig, freetype, fribidi, gettext, glib, harfbuzz, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 7efe10bc4e6ed223f0fb5467bac5376e999144dec394f13e561299c9640a32dc
+Description: Text and font handling library.
+Status: install ok installed
+
+Package: libepoxy
+Version: 1.5.10
+Port-Version: 1
+Depends: vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 493ff48fc4a2a4ecb78e9bb50cd9c4cb51e28f87f1c6a42ac41cdbc313b86b36
+Description: Epoxy is a library for handling OpenGL function pointer management for you
+Status: install ok installed
+
+Package: graphene
+Version: 1.10.8
+Port-Version: 1
+Depends: gettext, glib, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 51f88d40804e942dbd2e9d91c310c000c90957fda9347310e47cb98c13fcd3cd
+Description: A thin layer of types for graphic libraries.
+Status: install ok installed
+
+Package: gdk-pixbuf
+Version: 2.42.9
+Port-Version: 5
+Depends: gettext, glib, libpng, tiff, vcpkg-tool-meson, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: af73aeb8f930f4cf041ec60b35553dde46df0951eba8bd0dfa14abec33c1435f
+Description: Image loading library.
+Status: install ok installed
+
+Package: atk
+Version: 2.38.0
+Port-Version: 5
+Depends: gettext, glib, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 781e2c87cd4e9cd69ebb4457b70a9ff797fb95bcfb133f0f63203181d65e3632
+Description: GNOME Accessibility Toolkit
+Status: install ok installed
+
+Package: gtk
+Version: 4.6.8
+Port-Version: 1
+Depends: atk, cairo, gdk-pixbuf, gettext, glib, graphene, libepoxy, pango, sassc, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 65ad477054fa04fe3a702af7ad792c90ccf1a06b16112a70c4ace4e3e5434daa
+Description: Portable library for creating graphical user interfaces.
+Status: install ok installed
+
+Package: pcre
+Version: 8.45
+Port-Version: 5
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d922a78fe8cb31a5413a1a79b772b572da214f4444db5d08d9a5e8f0de69a9bf
+Description: Perl Compatible Regular Expressions
+Status: install ok installed
+
+Package: libsigcpp
+Version: 3.4.0
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 7ec4d561f439857249377299c9d9cc0a70f07812cebcd53e527e451a8d1877e2
+Description: Typesafe callback framework for C++
+Status: install ok installed
+
+Package: libsigcpp-3
+Version: 3.0.3
+Port-Version: 1
+Depends: libsigcpp
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 3860815efc455fda5e252aff69652738cd9f949ea6d4c7e7c177aa5634a4d090
+Description: Typesafe callback framework for C++
+Status: install ok installed
+
+Package: glibmm
+Version: 2.74.0
+Depends: gettext, glib, libffi, libiconv, libsigcpp-3, pcre, vcpkg-tool-meson, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d833e26a1029f4026579eca24e253319d526b5014ee3b6696c1a8d21c06fe9c4
+Description: This is glibmm, a C++ API for parts of glib that are useful for C++.
+Status: install ok installed
+
+Package: cairomm
+Version: 1.16.2
+Port-Version: 2
+Depends: cairo, libsigcpp, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 23c943b190f1b483b3e86a87af97541dbb5387bfa9bb4c2c4756f1cacf9d103b
+Description: A C++ wrapper for the cairo graphics library
+Status: install ok installed
+
+Package: pangomm
+Version: 2.50.1
+Depends: cairo, cairomm, fontconfig, freetype, gettext, glib, glibmm, harfbuzz, pango, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 3923e58a566f7e9e287116919174bb89114e7aaca8d70ac7a4732887c5c00279
+Description: pangomm is the official C++ interface for the Pango font layout library. See, for instance, the Pango::Layout class.
+Status: install ok installed
+
+Package: atkmm
+Version: 2.36.1
+Depends: atk, gettext, glib, glibmm, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 04609b8ae3b51642e65b20c6f974ecd0581ae85847e54d5189353c761224fa13
+Description: atkmm is the official C++ interface for the ATK accessibility toolkit library. It may be used, for instance, by user interfaces implemented with gtkmm.
+Status: install ok installed
+
+Package: gtkmm
+Version: 4.6.0
+Depends: atk, atkmm, cairo, cairomm, gdk-pixbuf, gettext, glib, glibmm, gtk, libepoxy, pango, pangomm, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d51c898bd57d7900c8c4120d15503359b1ac1b5c7f609ea581d87c7bcb92e639
+Description: gtkmm is the official C++ interface for the popular GUI library GTK+.
+Status: install ok installed
+
