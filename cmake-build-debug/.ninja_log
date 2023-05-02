@@ -1,5 +1,0 @@
-# ninja log v5
-12	5013	7037206074673140	build.ninja	8355e8c57d914b33
-1814	3280	7036419102725862	RocketDetection.exe	3bc3aede4ee853e0
-1	1814	7036419100005511	CMakeFiles/RocketDetection.dir/src/main.cpp.obj	27056aa91bbe1d02
-0	8	0	clean	c2414a75e646fdba
