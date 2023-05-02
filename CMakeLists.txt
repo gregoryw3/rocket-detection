@@ -14,12 +14,12 @@ pkg_check_modules(GTKMM_VARS REQUIRED IMPORTED_TARGET gtkmm-4.0)
 include("C:/Code Libraries/vcpkg/scripts/buildsystems/vcpkg.cmake")
 
 
-add_library(FFMPEG STATIC IMPORTED)
+add_library(FFMPEG STATIC IMPORTED src/extract_frames_test.cpp)
 
 
 
 
-add_executable(RocketDetection src/main.cpp src/extract_frames.cpp src/extract_frames.h src/extract_frames.h src/utils.cpp src/utils.h src/utils.h src/utils.cpp)
+add_executable(RocketDetection src/main.cpp src/extract_frames.cpp src/extract_frames.h src/extract_frames.h src/utils.cpp src/utils.h src/utils.h src/utils.cpp src/extract_frames_test.cpp src/extract_frames_test.h src/extract_subtitles_test.cpp)
 #opencv_core opencv_calib3d opencv_dnn opencv_features2d opencv_flann opencv_highgui opencv_imgcodecs opencv_imgproc opencv_ml opencv_objdetect opencv_photo opencv_stitching opencv_video opencv_videoio
 set(OPENCV_LIBS opencv)
 
